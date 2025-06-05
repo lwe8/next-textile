@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Next Textile",
+  title: {
+    default: "Next Textile",
+    template: "%s | Next Textile",
+  },
   description: "Next application with textile parser",
 };
 
@@ -14,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="antialiased">
+    <html lang="en" data-theme="dark">
+      <body>
+        <Navbar />
         <main>
-          <Navbar />
-          <div className="main-body">{children}</div>
+          {children}
           <Footer />
         </main>
       </body>
