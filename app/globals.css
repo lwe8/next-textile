@@ -147,3 +147,8 @@ footer p {
   border: 1px solid var(--hover);
   margin-bottom: 40px;
 }
+/* Image Center */
+.icenter {
+  display: block;
+  margin: 0 auto;
+}

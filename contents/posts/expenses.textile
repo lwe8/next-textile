@@ -4,12 +4,12 @@ date: 2025-05-22
 description: Very few people can tell exactly what their house cost, but I can!
 ---
 
-![Wooden boards](./imgs/lumber.jpg)
+!lumber.jpg!
 
-Some of you have asked me how much I spent building the house. Very few people can tell exactly what their house cost, but I can!
+p. Some of you have asked me how much I spent building the house. Very few people can tell exactly what their house cost, but I can!
 
-|                                    | &nbsp;&nbsp;&nbsp; |   Cost |
-| ---------------------------------- | ------------------ | -----: |
+| _. Hello                           | _. &nbsp;&nbsp;&nbsp; | _. Cost |
+|  
 | Boards (mostly shanty boards)      |                    |  $8035 |
 | Refuse shingles for roof sides     |                    |  $4000 |
 | Laths                              |                    |  $1250 |
