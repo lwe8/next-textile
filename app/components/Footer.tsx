@@ -1,7 +1,11 @@
+import GitHub from "./GitHub";
 export default function Footer() {
-	return (
-		<footer>
-			<p>@ 2025 Next Textile</p>
-		</footer>
-	);
+  return (
+    <footer>
+      <p>
+        <span style={{ fontSize: 24 }}>&#169;</span> 2025 Next Textile
+      </p>
+      <GitHub />
+    </footer>
+  );
 }

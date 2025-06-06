@@ -2,8 +2,6 @@
 title: "Home"
 ---
 
-!(textile-logo)logo/textile.svg!
-
 h2. About
 
 p. "Textile":https://textile-lang.com/ is a markup language (like Markdown) for formatting text in a blog or a content management system (CMS).

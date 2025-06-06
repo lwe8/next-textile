@@ -1,11 +1,16 @@
 import Link from "next/link";
+import { ThemeSwitch } from "./Theme";
 export default function Navbar() {
-	return (
-		<nav>
-			<h2>Next Textile</h2>
-			<a href="/">Home</a>
-			<a href="/posts">Posts</a>
-			<button type="button" className="theme-btn" data-theme-toggle />
-		</nav>
-	);
+  return (
+    <nav>
+      <h2>Next Textile</h2>
+      <Link href="/" className="nav-link">
+        Home
+      </Link>
+      <Link href="/posts" className="nav-link">
+        Posts
+      </Link>
+      <ThemeSwitch attribute="data-theme" classname="theme-btn" />
+    </nav>
+  );
 }
