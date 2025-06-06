@@ -2,17 +2,23 @@ import type { FC } from "react";
 import type { Post } from "@/textile";
 import Link from "next/link";
 
-const PostCard: FC<Partial<Post>> = ({ slug, parsedData }) => {
-  const title = parsedData?.title ?? "";
-  const date = parsedData?.date ?? "";
-  const des = parsedData?.description ?? "";
-  const _slug = slug ?? "";
+interface PostCardProps {
+  slug: Post["slug"];
+  title?: Post["parsedData"]["title"];
+  date?: Post["parsedData"]["date"];
+  description?: Post["parsedData"]["description"];
+}
+
+const PostCard: FC<PostCardProps> = ({ slug, title, date, description }) => {
+  const _title = title ?? "";
+  const _date = date ?? "";
+  const des = description ?? "";
   return (
     <div className="post-card">
-      <Link href={`/posts/${_slug}`} className="post-link">
-        {title}
+      <Link href={`/posts/${slug}`} className="post-link">
+        {_title}
       </Link>
-      <p>{date}</p>
+      <p>{_date}</p>
       <p>{des}</p>
     </div>
   );

@@ -42,7 +42,7 @@ function parsePages(text: string) {
   dataObj.body = textile.parse(dataObj.body).html;
   return dataObj;
 }
-
+// data for home page from index.textile
 export const homedata = {
   slug: homeData.slug,
   birthtimeMs: homeData.birthtimeMs,
@@ -50,7 +50,7 @@ export const homedata = {
   lastUpdate: homeData.lastUpdate,
   parsedData: parsePages(homeData.content),
 };
-
+// posts data
 const posts_data = await readContent("contents/posts");
 posts_data.sort((a, b) => b.birthtimeMs - a.birthtimeMs);
 export const postsdata: Posts = posts_data.map((post) => {
@@ -62,7 +62,34 @@ export const postsdata: Posts = posts_data.map((post) => {
     parsedData: parsePosts(post.content),
   };
 });
+//
+export type PaginatePost = {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+}[];
+export type PaginatePosts = PaginatePost[];
+const size = 5;
+const page_count = Math.ceil(postsdata.length / size);
+export function paginatePosts(): PaginatePosts {
+  const postPages = Array.from({ length: page_count }, (_, i) => {
+    const _index = i * size;
+    const _posts = postsdata.slice(_index, _index + size);
+    const _page = _posts.map((post) => {
+      return {
+        slug: post.slug,
+        title: post.parsedData.title,
+        date: post.parsedData.date,
+        description: post.parsedData.description,
+      };
+    });
+    return _page;
+  });
+  return postPages;
+}
 
+//
 const pages_data = await readContent("contents/pages");
 export const pagesdata = pages_data.map((page) => {
   return {
