@@ -1,6 +1,44 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@theme{}
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --spacing: 1px;
+}
 
-@theme 
+@layer base {
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body,
+  html {
+    height: 100%;
+  }
+  body {
+    @apply antialiased grayscale bg-[#eee] dark:bg-[#222] text-[#444] dark:text-[#ddd] font-poppins my-0 mx-auto;
+  }
+  main {
+    @apply max-w-7xl py-20 px-10 mx-auto;
+  }
+}
+
+@layer components {
+  /* theme button */
+  .theme-btn {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    float: right;
+  }
+  .theme-btn:hover {
+    color: var(--link);
+    cursor: pointer;
+  }
+}

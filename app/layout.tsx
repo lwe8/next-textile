@@ -3,7 +3,7 @@ import { Roboto, Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/Theme";
-import "./index.css";
+import "./globals.css";
 // Fonts
 export const poppins = Poppins({
   style: ["italic", "normal"],
@@ -29,8 +29,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
+          <main>
+            <Navbar />
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
