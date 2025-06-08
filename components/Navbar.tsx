@@ -1,24 +1,11 @@
 import Link from "next/link";
-import { ThemeSwitch } from "./Theme";
-export default function Navbar() {
+import ThemeIcons from "./icons/ThemeIcons";
+export default function Nav() {
   return (
-    <nav className="mb-18 pb-7 border-b-3 border-b-[#d1d1d1] dark:border-b-[#566] mt-10">
-      <h2 className="text-center text-3xl text-[#666] dark:text-[#ccc]">
-        Next Textile
-      </h2>
-      <Link
-        href="/"
-        className="mr-15 no-underline text-[#444] dark:text-[#ddd] hover:text-[#070] dark:hover:text-[#088]"
-      >
-        Home
-      </Link>
-      <Link
-        href="/posts"
-        className="mr-15 no-underline text-[#444] dark:text-[#ddd] hover:text-[#070] dark:hover:text-[#088]"
-      >
-        Posts
-      </Link>
-      <ThemeSwitch attribute="data-theme" classname="theme-btn" />
+    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        
+      </div>
     </nav>
   );
 }

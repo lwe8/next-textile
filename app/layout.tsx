@@ -1,16 +1,8 @@
 import type { Metadata } from "next";
-import { Roboto, Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/components/Theme";
+import ThemeScript from "@/components/ThemeScript";
 import "./globals.css";
-// Fonts
-export const poppins = Poppins({
-  style: ["italic", "normal"],
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -26,15 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <main>
-            <Navbar />
-            {children}
-          </main>
+        <main>
+          <Navbar />
+          {children}
           <Footer />
-        </ThemeProvider>
+        </main>
+        <ThemeScript />
       </body>
     </html>
   );
