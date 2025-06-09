@@ -2,9 +2,10 @@
 title: Expenses
 date: 2025-05-22
 description: Very few people can tell exactly what their house cost, but I can!
+coverImg: images/posts/lumber.jpg
 ---
 
-!lumber.jpg!
+!images/posts/lumber.jpg!
 
 p. Some of you have asked me how much I spent building the house. Very few people can tell exactly what their house cost, but I can!
 

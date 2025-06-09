@@ -2,9 +2,10 @@
 title: Coming home at night
 date: 2025-05-22
 description: It’s darker than most people think.
+coverImg: images/posts/stars.jpg
 ---
 
-!stars.jpg!
+!images/posts/stars.jpg!
 
 p. You might be surprised to learn just how dark it can get in the woods, even on an average night. It’s darker than most people think. Often, I have to look up at the gaps between the trees to find my way, using the faint light from the sky to guide me. When there’s no clear path, I rely on my feet to feel the worn trail or use my hands to recognize familiar trees. For instance, I often pass between two pines that are just eighteen inches apart, even in the pitch-black darkness.
 

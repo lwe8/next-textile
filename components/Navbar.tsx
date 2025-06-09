@@ -1,11 +1,20 @@
 import Link from "next/link";
-import ThemeIcons from "./icons/ThemeIcons";
-export default function Nav() {
+
+export default function NavBar() {
   return (
-    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        
-      </div>
-    </nav>
+    <header>
+      <h2>Next Textile</h2>
+      <nav>
+        <div>
+          <Link href="/" className="nav-link">
+            Home
+          </Link>
+          <Link href="/posts" className="nav-link">
+            Posts
+          </Link>
+        </div>
+        <button type="button" className="theme-btn" data-theme-toggle></button>
+      </nav>
+    </header>
   );
 }

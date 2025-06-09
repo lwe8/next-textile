@@ -2,9 +2,10 @@
 title: August rain
 date: 2025-05-22
 description: This lake is especially precious during those gentle rainstorms in August.
+coverImg: images/posts/waterlily.jpg
 ---
 
-!posts/waterlily.jpg!
+!images/posts/waterlily.jpg!
 
 p. This lake is especially precious during those gentle rainstorms in August. Imagine this: the air and water are perfectly still, the sky is overcast, and mid-afternoon has the serene calmness of evening. The wood-thrushes are singing their beautiful songs, echoing from shore to shore. It’s in these quiet intervals that the lake becomes truly mesmerizing.
 
