@@ -11,13 +11,25 @@ interface PagesData extends MatterResult {
   title: string;
 }
 
-export type Post = {
+interface _Post {
   slug: string;
   birthtimeMs: number;
   createAt: Date;
   lastUpdate: Date;
   parsedData: PostsData;
-};
+}
+export interface Post extends _Post {
+  prev: {
+    bool: boolean;
+    title: string;
+    slug: string;
+  };
+  next: {
+    bool: boolean;
+    title: string;
+    slug: string;
+  };
+}
 export type Posts = Post[];
 export type Page = {
   slug: string;
@@ -54,13 +66,42 @@ export const homedata = {
 // posts data
 const posts_data = await readContent("contents/posts");
 posts_data.sort((a, b) => b.birthtimeMs - a.birthtimeMs);
-export const postsdata: Posts = posts_data.map((post) => {
+const _postsdata: _Post[] = posts_data.map((post) => {
   return {
     slug: post.slug,
     birthtimeMs: post.birthtimeMs,
     createAt: post.createAt,
     lastUpdate: post.lastUpdate,
     parsedData: parsePosts(post.content),
+  };
+});
+export const postsdata: Posts = _postsdata.map((post) => {
+  const length = _postsdata.length;
+  const idx = _postsdata.indexOf(post);
+  const _prev =
+    idx <= 0
+      ? { bool: false, title: "No Post Found", slug: "" }
+      : {
+          bool: true,
+          title: _postsdata[idx - 1].parsedData.title,
+          slug: _postsdata[idx - 1].slug,
+        };
+  const _next =
+    idx >= length - 1
+      ? { bool: false, title: "No Post Found", slug: "" }
+      : {
+          bool: true,
+          title: _postsdata[idx + 1]?.parsedData.title,
+          slug: _postsdata[idx + 1]?.slug,
+        };
+  return {
+    slug: post.slug,
+    birthtimeMs: post.birthtimeMs,
+    createAt: post.createAt,
+    lastUpdate: post.lastUpdate,
+    parsedData: post.parsedData,
+    prev: { ..._prev },
+    next: { ..._next },
   };
 });
 //

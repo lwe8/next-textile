@@ -2,10 +2,10 @@
 title: Cozy
 date: 2025-05-22
 description: The interior is cozy and functional, designed to make the most of the small space.
-coverImg: images/posts/interior.jpg
+coverImg: /images/posts/interior.jpg
 ---
 
-!images/posts/interior.jpg!
+!/images/posts/interior.jpg!
 
 p. The interior is cozy and functional, designed to make the most of the small space. I’ve got a loft bed that looks out over the pond, a compact kitchen with a wood-burning stove, and plenty of storage built into the walls. I even managed to create a little reading nook by a large window where I can sit and watch the world go by.
 

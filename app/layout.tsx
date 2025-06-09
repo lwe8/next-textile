@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning >
       <body>
         <main>
           <Navbar />
@@ -26,7 +26,7 @@ export default function RootLayout({
           <Footer />
         </main>
 
-        <Script src="https://cdn.jsdelivr.net/gh/phothinmg/master-repo@main/honoblog/theme-button.js" />
+        <script defer src="https://cdn.jsdelivr.net/gh/phothinmg/master-repo@main/honoblog/theme-button.js" data-nscript="afterInteractive"></script>
       </body>
     </html>
   );

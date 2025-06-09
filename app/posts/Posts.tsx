@@ -11,7 +11,7 @@ export default function AllPosts() {
   const page: PaginatePost | null = pages ? pages[idx] : null;
   useEffect(() => {
     if (typeof window !== "undefined") {
-      fetch("/api/posts")
+      fetch("/api/posts/allposts")
         .then((res) => res.json())
         .then(setPages);
     }
@@ -28,13 +28,14 @@ export default function AllPosts() {
             title={p.title}
             date={p.date}
             description={p.description}
+            coverImg={p.coverImg}
           />
         ))
       ) : (
         <Loading />
       )}
       {page ? (
-        <div className="old-new">
+        <div className="pagination">
           {idx < pages_length - 1 ? (
             <button type="button" onClick={() => setIdx(idx + 1)}>
               Older Posts

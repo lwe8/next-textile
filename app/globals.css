@@ -14,10 +14,7 @@
   --border: 1px solid var(--cmed);
   --border-2: 3px solid var(--cmed);
 }
-:root {
-  /* Blog Card */
-  --blog-card-width: 20em;
-}
+
 :root,
 html[data-theme="light"] {
   --bg: #eee;
@@ -124,15 +121,24 @@ footer p {
   margin-right: 25px;
 }
 /* ============================================================================================================ */
-/* Post Card */
+/* https://codepen.io/Azadiduniya/embed/QrQOGx?height=316&theme-id=0&default-tab=result */
+
+/* Blog Card */
+:root {
+  --blog-card-width: 25em;
+}
 .blog-card {
-  display: grid;
+  display: flex;
   place-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--blog-card-width);
+  margin-bottom: 10px;
 }
 .blog-card section {
   padding: 20px;
   background-color: var(--bg-light);
-  width: var(--blog-card-width);
+  max-width: var(--blog-card-width);
   box-sizing: border-box;
 }
 .blog-card section img {
@@ -140,43 +146,65 @@ footer p {
   width: 100%;
 }
 .blog-card section h3 {
-  font-size: calc(var(--blog-card-width) / 10);
+  font-size: 36px;
   font-family: var(--font-josefin);
   text-transform: capitalize;
-  color: #00257f;
+  color: var(--link);
 }
 .blog-card section p {
   font-family: var(--font-pt);
   color: var(--text-2);
-  font-size: calc(var(--blog-card-width) / 20);
+  font-size: 20px;
 }
-.blog-card section .post-link{
+.blog-card section .post-link {
   text-decoration: none;
-  color: var(--bg);
+  color: var(--text);
   font-family: var(--font-josefin);
   font-weight: 700;
-  font-size: calc(var(--blog-card-width)/23);
+  font-size: 20px;
 }
-.blog-card section .post-link:hover{
+.blog-card section .post-link:hover {
   color: var(--hover-light);
 }
-.date{
-  font-size: calc(var(--blog-card-width)/25);
+.blog-card section p.date {
+  font-size: 16px;
 }
-/* .post-card {
-  margin-bottom: 40px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 20px;
+/* ============================================================================================================= */
+/* Pagination  */
+.pagination {
+  display: flex;
+  flex-direction: row;
+  margin-top: 38px;
+  justify-content: space-between;
 }
-.post-card .post-link {
+.pagination button {
   text-decoration: none;
   color: var(--link);
-  font-size: large;
+  font-family: var(--font-pt);
+  font-size: medium;
+  border: none;
+  background-color: inherit;
 }
-.post-card .post-link:hover {
+.pagination button:hover {
   color: var(--hover-light);
-} */
-/* ============================================================================================================= */
+  cursor: pointer;
+}
+.pagination a {
+  text-decoration: none;
+  color: var(--link);
+  font-family: var(--font-pt);
+  font-size: medium;
+}
+.pagination a:hover {
+  color: var(--hover-light);
+  cursor: pointer;
+}
+.pagination p {
+  font-family: var(--font-pt);
+  font-size: medium;
+  color: var(--error);
+}
+/* ============================================================================================================== */
 p a {
   text-decoration: none;
   color: var(--link);
@@ -227,55 +255,6 @@ table caption {
   margin-bottom: 0.5rem;
 }
 
-/* Post Card */
-.post-card {
-  margin-bottom: 40px;
-  /* border-bottom: var(--border); */
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 20px;
-}
-.post-card .post-link {
-  text-decoration: none;
-  color: var(--link);
-  font-size: large;
-}
-.post-card .post-link:hover {
-  color: var(--hover-light);
-}
-.bar {
-  border: 1px solid var(--link);
-  margin-bottom: 40px;
-}
-/* Image Center */
-.icenter {
-  display: block;
-  margin: 0 auto;
-}
-
-/* Old New Posts  */
-.old-new {
-  display: flex;
-  flex-direction: row;
-  margin-top: 38px;
-  justify-content: space-between;
-}
-.old-new button {
-  text-decoration: none;
-  color: var(--link);
-  font-family: var(--font-mono);
-  font-size: medium;
-  border: none;
-  background-color: inherit;
-}
-.old-new button:hover {
-  color: var(--hover-light);
-  cursor: pointer;
-}
-.old-new p {
-  font-family: var(--font-mono);
-  font-size: medium;
-  color: var(--error);
-}
 /* Post */
 .post p img {
   display: block;
