@@ -1,0 +1,49 @@
+/* https://cssloaders.github.io/ */
+@layer components {
+  @scope (.page-loader) {
+    :scope {
+      margin: auto;
+      width: 50%;
+      text-align: center;
+    }
+    span {
+      width: 48px;
+      height: 48px;
+      border-width: 3px;
+      border-style: solid;
+      border-color: var(--ptm-color-text-2) var(--ptm-color-text-2) transparent;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+    span::after {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      left: 20px;
+      top: 31px;
+      border: 10px solid transparent;
+      border-right-color: var(--ptm-color-text-2);
+      transform: rotate(-40deg);
+    }
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

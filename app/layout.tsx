@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,15 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <main>
-          <Navbar />
-          {children}
-          <Footer />
-        </main>
+        <Navbar />
 
-        <script defer src="https://cdn.jsdelivr.net/gh/phothinmg/master-repo@main/honoblog/theme-button.js" data-nscript="afterInteractive"></script>
+        {children}
+        <Footer />
+
+        {/* <script
+          defer
+          src="https://cdn.jsdelivr.net/gh/phothinmg/master-repo@main/honoblog/theme-button.js"
+          data-nscript="afterInteractive"
+        ></script> */}
       </body>
     </html>
   );

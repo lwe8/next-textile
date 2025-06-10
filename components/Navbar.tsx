@@ -1,20 +1,32 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
+import MenuBar from "./icons/MenuBar";
 
-export default function NavBar() {
+type ClassType = "topnav" | "topnav responsive";
+const changeClass = (cla: ClassType): ClassType => {
+  return cla === "topnav responsive" ? "topnav" : "topnav responsive";
+};
+export default function Nav() {
+  const [navClass, setNavClass] = useState<ClassType>("topnav");
+
+  const toggleNavClass = () => {
+    setNavClass((prevClass) => changeClass(prevClass));
+  };
+
   return (
-    <header>
-      <h2>Next Textile</h2>
-      <nav>
-        <div>
-          <Link href="/" className="nav-link">
-            Home
-          </Link>
-          <Link href="/posts" className="nav-link">
-            Posts
-          </Link>
-        </div>
-        <button type="button" className="theme-btn" data-theme-toggle></button>
-      </nav>
-    </header>
+    <div className={navClass} id="navBar">
+      <Link href="/" className="logo">
+        <span>Next Textile</span>
+      </Link>
+      <div className="link-group">
+        <Link href="posts">Posts</Link>
+        <Link href="#contact">Contact</Link>
+      </div>
+
+      <button type="button" onClick={toggleNavClass}>
+        <MenuBar size={36} />
+      </button>
+    </div>
   );
 }

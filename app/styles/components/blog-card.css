@@ -1,0 +1,58 @@
+/* https://codepen.io/Azadiduniya/embed/QrQOGx?height=316&theme-id=0&default-tab=result */
+@layer components {
+  :root {
+    --card-width: 25em;
+    --card-bg: #f6f6f7;
+    --card-text: #67676c;
+    --card-title: #009292;
+  }
+  .dark,
+  html[data-theme="dark"] {
+    --card-bg: #202127;
+    --card-text: #98989f;
+    --card-title: #3dd68c;
+  }
+  @scope (.blog-card) {
+    :scope {
+      display: flex;
+      place-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: var(--card-width);
+      margin-bottom: 10px;
+    }
+    section {
+      padding: 20px;
+      background-color: var(--card-bg);
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+    h3 {
+      font-size: calc(var(--card-width) / 15);
+      text-transform: capitalize;
+      color: var(--card-title);
+      margin-bottom: 10px;
+    }
+    p {
+      font-family: var(--ptm-font-pt);
+      color: var(--card-text);
+      font-size: calc(var(--card-width) / 22);
+    }
+    .post-link {
+      text-decoration: none;
+      color: var(--card-text);
+      font-family: var(--ptm-font-josefin);
+      font-weight: 700;
+      font-size: calc(var(--card-width) / 23);
+    }
+    .post-link:hover {
+      color: var(--card-title);
+    }
+    p.date {
+      font-size: calc(var(--card-width) / 25);
+    }
+  }
+}

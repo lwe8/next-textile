@@ -1,0 +1,5 @@
+@layer utilities {
+  .m-10 {
+    margin: 10px 10px;
+  }
+}

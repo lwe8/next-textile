@@ -1,106 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:100,100i,300,300i,400,400i,600,600i,700,700i");
-:root {
-  /* Fonts */
-  --font-poppins: "Poppins", sans-serif;
-  --font-mono: "Roboto Mono", monospace;
-  --font-pt: "PT Serif", Serif;
-  --font-josefin: "Josefin Slab", serif;
-}
-:root {
-  /* Border */
-  --border: 1px solid var(--cmed);
-  --border-2: 3px solid var(--cmed);
-}
+@layer reset,base,utilities,components;
+/* 1. Load fonts first , import order is important,placed at the top of other import */
+@import "styles/fonts.css";
+/* 2. Color for global  */
+@import "styles/color.css";
+/* 
+3. Importing Layers
+-------------------
+*/
+/* 3.1 Reset with normalize.css v8.0.1  */
+@import "styles/normalize.css" layer(reset);
+/* 3.2 Base styles */
+@import "styles/base.css";
+/* 3.3  Utilities classes */
+@import "styles/utilities.css";
+/* 3.4 Styles for components with @scope rule */
+@import "styles/components/blog-card.css";
+@import "styles/components/page-loader.css";
+@import "styles/components/topnav.css";
+@import "styles/components/pagination.css";
 
-:root,
-html[data-theme="light"] {
-  --bg: #eee;
-  --bg-light: #fff;
-  --text: #444;
-  --text-2: #666;
-  --link: #077;
-  --cmed: #d1d1d1;
-  --title-link: #0080ff;
-  --hover-light: #0e6fde;
-  --error: rgb(120, 8, 8);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root,
-  html[data-theme="dark"] {
-    --bg: #222;
-    --bg-light: #333;
-    --text: #ddd;
-    --text-2: #bbb;
-    --link: #070;
-    --cmed: #566;
-    --error: rgb(215, 100, 100);
-  }
-}
-/* Basic */
-* {
-  box-sizing: border-box;
-}
-html {
-  background-color: var(--bg);
-  color: var(--text);
-}
-body {
-  font-family: var(--font-poppins);
-  line-height: 1.6;
-  margin: 0;
-  padding: 20px;
-}
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-/* ============================================================================================== */
-
-/* Nav Bar */
-header {
-  margin-bottom: 18px;
-  border-bottom: var(--border-2);
-  padding-bottom: 7px;
-}
-nav {
-  padding: 7px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  justify-items: center;
-}
-nav .nav-link {
-  margin-right: 15px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-nav .nav-link:hover {
-  color: var(--link);
-}
-header h2 {
-  text-align: center;
-  color: var(--text-2);
-  margin-bottom: 3px !important;
-}
-/* theme button */
-.theme-btn {
-  border: none;
-  background-color: inherit;
-  color: inherit;
-  float: right;
-  font-size: large;
-}
-.theme-btn:hover {
-  color: var(--link);
-  cursor: pointer;
-}
 /* ============================================================================================================ */
 /* Footer */
 footer {
@@ -121,90 +39,7 @@ footer p {
   margin-right: 25px;
 }
 /* ============================================================================================================ */
-/* https://codepen.io/Azadiduniya/embed/QrQOGx?height=316&theme-id=0&default-tab=result */
 
-/* Blog Card */
-:root {
-  --blog-card-width: 25em;
-}
-.blog-card {
-  display: flex;
-  place-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--blog-card-width);
-  margin-bottom: 10px;
-}
-.blog-card section {
-  padding: 20px;
-  background-color: var(--bg-light);
-  max-width: var(--blog-card-width);
-  box-sizing: border-box;
-}
-.blog-card section img {
-  box-sizing: border-box;
-  width: 100%;
-}
-.blog-card section h3 {
-  font-size: 36px;
-  font-family: var(--font-josefin);
-  text-transform: capitalize;
-  color: var(--link);
-}
-.blog-card section p {
-  font-family: var(--font-pt);
-  color: var(--text-2);
-  font-size: 20px;
-}
-.blog-card section .post-link {
-  text-decoration: none;
-  color: var(--text);
-  font-family: var(--font-josefin);
-  font-weight: 700;
-  font-size: 20px;
-}
-.blog-card section .post-link:hover {
-  color: var(--hover-light);
-}
-.blog-card section p.date {
-  font-size: 16px;
-}
-/* ============================================================================================================= */
-/* Pagination  */
-.pagination {
-  display: flex;
-  flex-direction: row;
-  margin-top: 38px;
-  justify-content: space-between;
-}
-.pagination button {
-  text-decoration: none;
-  color: var(--link);
-  font-family: var(--font-pt);
-  font-size: medium;
-  border: none;
-  background-color: inherit;
-}
-.pagination button:hover {
-  color: var(--hover-light);
-  cursor: pointer;
-}
-.pagination a {
-  text-decoration: none;
-  color: var(--link);
-  font-family: var(--font-pt);
-  font-size: medium;
-}
-.pagination a:hover {
-  color: var(--hover-light);
-  cursor: pointer;
-}
-.pagination p {
-  font-family: var(--font-pt);
-  font-size: medium;
-  color: var(--error);
-}
-/* ============================================================================================================== */
 p a {
   text-decoration: none;
   color: var(--link);
@@ -236,7 +71,6 @@ figure > table {
 td,
 th {
   border: var(--border);
-  text-align: start;
   padding: 0.5rem;
 }
 
@@ -246,7 +80,6 @@ th {
 }
 
 tr:nth-child(even) {
-  /* Set every other cell slightly darker. Improves readability. */
   background-color: var(--bg);
 }
 
@@ -267,77 +100,4 @@ table caption {
   margin: 0 auto;
   max-width: 200px;
   max-height: 200px;
-}
-
-/* Pre Code block */
-
-/* 
-Loader
-https://cssloaders.github.io/
- */
-.load-div {
-  margin: auto;
-  width: 50%;
-  text-align: center;
-}
-.loader {
-  width: 48px;
-  height: 48px;
-  border-width: 3px;
-  border-style: dashed solid solid dotted;
-  border-color: #ff3d00 #ff3d00 transparent #ff3d00;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-.loader::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  left: 20px;
-  top: 31px;
-  border: 10px solid transparent;
-  border-right-color: #ff3d00;
-  transform: rotate(-40deg);
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/*  */
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }

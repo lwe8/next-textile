@@ -1,0 +1,180 @@
+/* COLOR */
+:root,
+html[data-theme="light"] {
+  --ptm-color-white: #ffffff;
+  --ptm-color-black: #000000;
+  --ptm-color-blue: blue;
+  --ptm-color-neutral: var(--ptm-color-black);
+  --ptm-color-neutral-inverse: var(--ptm-color-white);
+}
+.dark,
+html[data-theme="dark"] {
+  --ptm-color-neutral: var(--ptm-color-white);
+  --ptm-color-neutral-inverse: var(--ptm-color-black);
+}
+
+:root {
+  --ptm-color-gray-1: #dddde3;
+  --ptm-color-gray-2: #e4e4e9;
+  --ptm-color-gray-3: #ebebef;
+  --ptm-color-gray-soft: rgba(142, 150, 170, 0.14);
+  --ptm-color-indigo-1: #3451b2;
+  --ptm-color-indigo-2: #3a5ccc;
+  --ptm-color-indigo-3: #5672cd;
+  --ptm-color-cyan-1: #009292;
+  --ptm-color-indigo-soft: rgba(100, 108, 255, 0.14);
+  --ptm-color-purple-1: #6f42c1;
+  --ptm-color-purple-2: #7e4cc9;
+  --ptm-color-purple-3: #8e5cd9;
+  --ptm-color-purple-soft: rgba(159, 122, 234, 0.14);
+  --ptm-color-green-1: #18794e;
+  --ptm-color-green-2: #299764;
+  --ptm-color-green-3: #30a46c;
+  --ptm-color-green-soft: rgba(16, 185, 129, 0.14);
+  --ptm-color-yellow-1: #915930;
+  --ptm-color-yellow-2: #946300;
+  --ptm-color-yellow-3: #9f6a00;
+  --ptm-color-yellow-soft: rgba(234, 179, 8, 0.14);
+  --ptm-color-red-1: #b8272c;
+  --ptm-color-red-2: #d5393e;
+  --ptm-color-red-3: #e0575b;
+  --ptm-color-red-soft: rgba(244, 63, 94, 0.14);
+  --ptm-color-sponsor: #db2777;
+}
+
+.dark,
+html[data-theme="dark"] {
+  --ptm-color-gray-1: #515c67;
+  --ptm-color-gray-2: #414853;
+  --ptm-color-gray-3: #32363f;
+  --ptm-color-gray-soft: rgba(101, 117, 133, 0.16);
+  --ptm-color-indigo-1: #a8b1ff;
+  --ptm-color-indigo-2: #5c73e7;
+  --ptm-color-indigo-3: #3e63dd;
+  --ptm-color-indigo-soft: rgba(100, 108, 255, 0.16);
+  --ptm-color-purple-1: #c8abfa;
+  --ptm-color-purple-2: #a879e6;
+  --ptm-color-purple-3: #8e5cd9;
+  --ptm-color-purple-soft: rgba(159, 122, 234, 0.16);
+  --ptm-color-green-1: #3dd68c;
+  --ptm-color-green-2: #30a46c;
+  --ptm-color-green-3: #298459;
+  --ptm-color-green-soft: rgba(16, 185, 129, 0.16);
+  --ptm-color-yellow-1: #f9b44e;
+  --ptm-color-yellow-2: #da8b17;
+  --ptm-color-yellow-3: #a46a0a;
+  --ptm-color-yellow-soft: rgba(234, 179, 8, 0.16);
+  --ptm-color-red-1: #f66f81;
+  --ptm-color-red-2: #f14158;
+  --ptm-color-red-3: #b62a3c;
+  --ptm-color-red-soft: rgba(244, 63, 94, 0.16);
+}
+
+:root {
+  --ptm-color-bg: #eeeeee;
+  --ptm-color-bg-alt: #f6f6f7;
+  --ptm-color-bg-elv: #ffffff;
+  --ptm-color-bg-soft: #f6f6f7;
+}
+.dark,
+html[data-theme="dark"] {
+  --ptm-color-bg: #1b1b1f;
+  --ptm-color-bg-alt: #161618;
+  --ptm-color-bg-elv: #202127;
+  --ptm-color-bg-soft: #202127;
+}
+:root {
+  --ptm-color-border: #c2c2c4;
+  --ptm-color-divider: #e2e2e3;
+  --ptm-color-gutter: #e2e2e3;
+}
+.dark,
+html[data-theme="dark"] {
+  --ptm-color-border: #3c3f44;
+  --ptm-color-divider: #2e2e32;
+  --ptm-color-gutter: #000000;
+}
+:root {
+  --ptm-color-text-1: #3c3c43;
+  --ptm-color-text-2: #67676c;
+  --ptm-color-text-3: #929295;
+}
+.dark,
+html[data-theme="dark"] {
+  --ptm-color-text-1: #dfdfd6;
+  --ptm-color-text-2: #98989f;
+  --ptm-color-text-3: #6a6a71;
+}
+
+:root {
+  --ptm-color-default-1: var(--ptm-color-gray-1);
+  --ptm-color-default-2: var(--ptm-color-gray-2);
+  --ptm-color-default-3: var(--ptm-color-gray-3);
+  --ptm-color-default-soft: var(--ptm-color-gray-soft);
+  --ptm-color-brand-1: var(--ptm-color-indigo-1);
+  --ptm-color-brand-2: var(--ptm-color-indigo-2);
+  --ptm-color-brand-3: var(--ptm-color-indigo-3);
+  --ptm-color-brand-soft: var(--ptm-color-indigo-soft);
+  --ptm-color-brand: var(--ptm-color-brand-1);
+  --ptm-color-tip-1: var(--ptm-color-brand-1);
+  --ptm-color-tip-2: var(--ptm-color-brand-2);
+  --ptm-color-tip-3: var(--ptm-color-brand-3);
+  --ptm-color-tip-soft: var(--ptm-color-brand-soft);
+  --ptm-color-note-1: var(--ptm-color-brand-1);
+  --ptm-color-note-2: var(--ptm-color-brand-2);
+  --ptm-color-note-3: var(--ptm-color-brand-3);
+  --ptm-color-note-soft: var(--ptm-color-brand-soft);
+  --ptm-color-success-1: var(--ptm-color-green-1);
+  --ptm-color-success-2: var(--ptm-color-green-2);
+  --ptm-color-success-3: var(--ptm-color-green-3);
+  --ptm-color-success-soft: var(--ptm-color-green-soft);
+  --ptm-color-important-1: var(--ptm-color-purple-1);
+  --ptm-color-important-2: var(--ptm-color-purple-2);
+  --ptm-color-important-3: var(--ptm-color-purple-3);
+  --ptm-color-important-soft: var(--ptm-color-purple-soft);
+  --ptm-color-warning-1: var(--ptm-color-yellow-1);
+  --ptm-color-warning-2: var(--ptm-color-yellow-2);
+  --ptm-color-warning-3: var(--ptm-color-yellow-3);
+  --ptm-color-warning-soft: var(--ptm-color-yellow-soft);
+  --ptm-color-danger-1: var(--ptm-color-red-1);
+  --ptm-color-danger-2: var(--ptm-color-red-2);
+  --ptm-color-danger-3: var(--ptm-color-red-3);
+  --ptm-color-danger-soft: var(--ptm-color-red-soft);
+  --ptm-color-caution-1: var(--ptm-color-red-1);
+  --ptm-color-caution-2: var(--ptm-color-red-2);
+  --ptm-color-caution-3: var(--ptm-color-red-3);
+  --ptm-color-caution-soft: var(--ptm-color-red-soft);
+}
+
+:root {
+  --ptm-code-block-bg: var(--ptm-color-bg-alt);
+  --ptm-code-block-lang: var(--ptm-color-text-2);
+  --ptm-code-line-height: 1.7;
+  --ptm-code-font-size: 0.875em;
+  --ptm-code-block-color: var(--ptm-color-text-2);
+  --ptm-code-line-highlight-color: var(--ptm-color-gray-soft);
+  --ptm-code-line-error-color: var(--ptm-color-red-soft);
+  --ptm-code-line-warning-color: var(--ptm-color-yellow-soft);
+  --ptm-code-line-diff-remove-color: var(--ptm-color-red-soft);
+  --ptm-code-line-diff-remove-symbol-color: var(--ptm-color-red-1);
+  --ptm-code-line-diff-add-color: var(--ptm-color-green-soft);
+  --ptm-code-line-diff-add-symbol-color: var(--ptm-color-green-1);
+}
+:root {
+  --ptm-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ptm-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --ptm-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --ptm-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+  --ptm-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.16);
+}
+.dark,
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+:root {
+  --ptm-height-init: 100vh;
+  --ptm-width-init: 100vw;
+  --ptm-width-body: 50rem;
+  --ptm-line-height: 1.6;
+}

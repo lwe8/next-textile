@@ -2,24 +2,30 @@
 import BlankDiv from "@/components/BlankDiv";
 import Loading from "@/components/Loading";
 import PostCard from "@/components/PostCard";
-import type { PaginatePost, PaginatePosts } from "@/textile";
+import type { PaginatePosts } from "@/textile";
 import { useEffect, useState } from "react";
+import PagePagination from "@/components/PagePaginate";
 
 export default function AllPosts() {
   const [pages, setPages] = useState<PaginatePosts | null>(null);
   const [idx, setIdx] = useState(0);
-  const page: PaginatePost | null = pages ? pages[idx] : null;
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       fetch("/api/posts/allposts")
         .then((res) => res.json())
-        .then(setPages);
+        .then((data) => {
+          setPages(data);
+        });
     }
   }, []);
-  const pages_length = pages?.length ?? 0;
+
+  const page = pages?.[idx] ?? null;
+  const totalPage = pages?.length ?? 0;
+
   return (
     <div>
-      <h3>Posts</h3>
+      <h3 style={{ marginBottom: "25px", textAlign: "center" }}>Posts</h3>
       {page ? (
         page.map((p) => (
           <PostCard
@@ -34,23 +40,9 @@ export default function AllPosts() {
       ) : (
         <Loading />
       )}
+
       {page ? (
-        <div className="pagination">
-          {idx < pages_length - 1 ? (
-            <button type="button" onClick={() => setIdx(idx + 1)}>
-              Older Posts
-            </button>
-          ) : (
-            <p>No older posts</p>
-          )}
-          {idx > 0 ? (
-            <button type="button" onClick={() => setIdx(idx - 1)}>
-              Newer Posts
-            </button>
-          ) : (
-            <p>No newer posts</p>
-          )}
-        </div>
+        <PagePagination fn={setIdx} index={idx} pages={totalPage} />
       ) : (
         <BlankDiv />
       )}

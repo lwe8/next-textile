@@ -1,0 +1,63 @@
+@layer components {
+  @scope (.arrow-icon) {
+    :scope {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-color: var(--ptm-color-bg-soft);
+      color: var(--ptm-color-text-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-size: 1.2rem;
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+    :scope:hover {
+      background-color: var(--ptm-color-divider);
+    }
+  }
+  @scope (.nopage-icon) {
+    :scope {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background-color: var(--ptm-color-bg-soft);
+      color: var(--ptm-color-text-2);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-size: 1.2rem;
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+    span {
+      font-size: small;
+      font-family: var(--ptm-font-josefin);
+      color: var(--ptm-color-sponsor);
+      font-weight: 800;
+    }
+  }
+  @scope (.page-pagination) {
+    :scope {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+      justify-content: space-between;
+      max-width: 25em;
+      background-color: var(--ptm-color-bg-elv);
+      margin: 30px auto;
+      padding: 10px;
+      border-radius: 50px;
+    }
+  }
+}
